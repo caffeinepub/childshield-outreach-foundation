@@ -1,0 +1,15 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the complete single-page landing structure with header, hero, about, programs, get involved, contact sections, and footer.",
+  "frontend/src/components/SiteHeader.tsx": "Fixed header component with logo, navigation links for smooth scrolling to page sections, and responsive mobile menu.",
+  "frontend/src/components/Hero.tsx": "Hero section with background image, foundation name, tagline, and call-to-action buttons for getting involved and learning more.",
+  "frontend/src/components/About.tsx": "About section describing the foundation's mission with three core values (Compassion, Community, Impact) displayed in cards.",
+  "frontend/src/components/Programs.tsx": "Programs section showcasing four key program areas (Education Support, Safe Spaces, Health & Wellness, Family Empowerment) with icons and descriptions.",
+  "frontend/src/components/GetInvolved.tsx": "Get Involved section presenting four ways to support the foundation (Donate, Volunteer, Sponsor, Spread the Word) with a call-to-action to contact.",
+  "frontend/src/components/Contact.tsx": "Contact section with email, phone, and location information displayed in cards, plus an urgent concerns notice.",
+  "frontend/src/components/LandingSection.tsx": "Reusable section wrapper component providing consistent spacing, max-width, heading styles, and scroll offset for smooth navigation.",
+  "frontend/src/components/Footer.tsx": "Footer component displaying logo, mission statement, copyright, and attribution link to caffeine.ai with UTM tracking.",
+  "frontend/src/index.css": "Global styles with warm amber/orange and green color palette using OKLCH color system for both light and dark modes, avoiding blue/purple defaults.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with custom color tokens, border radius, shadows, and font settings to support the warm charity aesthetic.",
+  "frontend/index.html": "HTML entry point with updated meta description for SEO describing the foundation's mission and purpose.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks when backend integration is needed."
+}

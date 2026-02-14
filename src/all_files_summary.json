@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Minimal Motoko canister actor with no defined methods.",
+  "feature_evidence.json": "Feature evidence report describing implemented frontend features, associated files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Text file containing prewritten summaries for various frontend components and assets.",
+  "frontend/index.css": "Global Tailwind-based style sheet defining OKLCH color variables and theme tokens for light and dark modes.",
+  "frontend/index.html": "HTML entry point setting up SEO metadata and loading the React app root.",
+  "frontend/src/App.tsx": "Main React component assembling the landing page structure with header, sections, and footer.",
+  "frontend/src/components/About.tsx": "About section describing the foundation’s mission and core values with icon cards.",
+  "frontend/src/components/Contact.tsx": "Contact section presenting email, phone, location details, and an urgent-notice message.",
+  "frontend/src/components/Footer.tsx": "Footer displaying logo, mission text, copyright, and a caffeine.ai attribution link.",
+  "frontend/src/components/GetInvolved.tsx": "Section listing ways to support the foundation and providing a scroll-to-contact call-to-action.",
+  "frontend/src/components/Hero.tsx": "Hero banner with background image, foundation title, tagline, and scroll-triggering buttons.",
+  "frontend/src/components/LandingSection.tsx": "Reusable wrapper component providing consistent layout, spacing, and section headings.",
+  "frontend/src/components/Programs.tsx": "Renders a Programs section listing four program cards with icons, titles, and descriptions within a styled landing section.",
+  "frontend/src/components/SiteHeader.tsx": "Implements a responsive header with scroll-aware styling, smooth-scrolling navigation links, and a mobile menu toggle.",
+  "frontend/src/hooks/useActor.ts": "Provides a hook that creates and manages a backend actor tied to Internet Identity, refetching queries when identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Defines an Internet Identity authentication context and provider handling login, stored identity loading, and state utilities.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file reserved for future React Query hooks; currently exports nothing.",
+  "frontend/src/index.css": "Sets global Tailwind styles and custom theme variables for a warm charity color palette with light/dark mode support.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with React Query and Internet Identity providers before rendering.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, fonts, animations, and plugins aligned with the project's design system.",
+  "project_state.json": "Tracks project metadata, requirements, features, and asset needs for the CHILDSHIELD OUTREACH FOUNDATION site."
+}

@@ -1,0 +1,106 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "CHILDSHIELD OUTREACH FOUNDATION landing page",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page public landing page at / with on-page navigation and required sections in English.",
+      "acceptanceCriteria": [
+        "Visiting the deployed app root path (/) displays a landing page titled “CHILDSHIELD OUTREACH FOUNDATION”.",
+        "The page includes a top navigation (or equivalent) that scrolls to sections on the same page.",
+        "At minimum, the page contains these sections: Hero (name + short tagline), About, What We Do/Programs, Get Involved/Support, Contact.",
+        "All user-facing text is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the root app view that renders the single-page landing content at /, including a sticky header navigation that scrolls to in-page section anchors (Hero, About, Programs, Get Involved, Contact). Use shadcn-ui components (e.g., Button, Card, Separator) to structure and style sections; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/LandingSection.tsx",
+          "operation": "create",
+          "description": "Add a small reusable section wrapper component to standardize spacing, max-width, headings, and anchor offsets for smooth in-page navigation; use shadcn-ui styling patterns where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "create",
+          "description": "Create a header component containing the logo, site name, and navigation links that scroll to the corresponding sections on the same page; use shadcn-ui Button (or similar) for nav actions; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply a cohesive child-focused charity visual theme (not blue/purple-primary) across typography, spacing, and components.",
+      "acceptanceCriteria": [
+        "A consistent theme is used across headings, body text, buttons/links, section backgrounds, and spacing.",
+        "Theme avoids a default/unstyled look and is applied consistently across all sections.",
+        "Theme does not rely on blue-and-purple as the primary palette."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styles and Tailwind base layers, including a warm, hopeful color system (e.g., amber/orange + green accents), typography defaults, and consistent section spacing; ensure the primary palette is not blue/purple."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens (as needed) to support the landing page look (e.g., warm accent colors, gradients, and typography/spacing defaults) while keeping a consistent, non-blue/purple primary palette across the app."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Apply the theme consistently across all landing sections (backgrounds, headings, buttons, cards) and use shadcn-ui components where appropriate for cohesive styling; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add basic SEO/share metadata (document title and meta description) for the landing page.",
+      "acceptanceCriteria": [
+        "Browser tab title is set to “CHILDSHIELD OUTREACH FOUNDATION”.",
+        "A meta description is present and describes the charity in general terms without adding unverifiable specifics."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add a meta description for “CHILDSHIELD OUTREACH FOUNDATION” describing the charity in general, non-specific terms; ensure the existing document title remains “CHILDSHIELD OUTREACH FOUNDATION”."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Include and render generated static logo and hero/banner images from frontend/public/assets/generated without backend serving.",
+      "acceptanceCriteria": [
+        "Generated images are stored under frontend/public/assets/generated.",
+        "The logo appears in the header/hero area, and the hero/banner image appears in the hero section.",
+        "No backend endpoints are introduced solely to serve these images."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/childshield-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static logo asset at the required path for static hosting."
+        },
+        {
+          "path": "frontend/public/assets/generated/childshield-hero.dim_1600x600.png",
+          "operation": "create",
+          "description": "Add the generated static hero/banner asset at the required path for static hosting."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Render the static logo image from frontend/public/assets/generated/childshield-logo.dim_512x512.png in the header/hero area (static hosting; no backend involvement)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Render the hero/banner image from frontend/public/assets/generated/childshield-hero.dim_1600x600.png prominently in the Hero section, ensuring it loads via static hosting (no backend involvement)."
+        }
+      ]
+    }
+  ]
+}

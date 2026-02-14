@@ -1,0 +1,98 @@
+{
+  "kind": "build_request",
+  "title": "Create a public landing page for CHILDSHIELD OUTREACH FOUNDATION",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a public, single-page website (landing page) for the charity named “CHILDSHIELD OUTREACH FOUNDATION”, accessible at the app’s root URL (/), with clear on-page sections and navigation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website link for a charity called CHILDSHIELD OUTREACH FOUNDATION"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visiting the deployed app root path (/) displays a landing page titled “CHILDSHIELD OUTREACH FOUNDATION”.",
+        "The page includes a top navigation (or equivalent) that scrolls to sections on the same page.",
+        "At minimum, the page contains these sections: Hero (name + short tagline), About, What We Do/Programs, Get Involved/Support, Contact.",
+        "All user-facing text is in English."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Apply a coherent, distinctive visual theme appropriate for a child-focused charity (consistent colors, typography, spacing, and component styling) across the landing page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website link for a charity called CHILDSHIELD OUTREACH FOUNDATION"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A consistent theme is used across headings, body text, buttons/links, section backgrounds, and spacing.",
+        "Theme avoids a default/unstyled look and is applied consistently across all sections.",
+        "Theme does not rely on blue-and-purple as the primary palette."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add basic SEO and share metadata for the landing page (document title and meta description) reflecting “CHILDSHIELD OUTREACH FOUNDATION”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website link for a charity called CHILDSHIELD OUTREACH FOUNDATION"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Browser tab title is set to “CHILDSHIELD OUTREACH FOUNDATION”.",
+        "A meta description is present and describes the charity in general terms without adding unverifiable specifics."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Include generated static image assets (logo and hero/banner illustration) and render them on the landing page using static hosting (not served via the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website link for a charity called CHILDSHIELD OUTREACH FOUNDATION"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are stored under frontend/public/assets/generated.",
+        "The logo appears in the header/hero area, and the hero/banner image appears in the hero section.",
+        "No backend endpoints are introduced solely to serve these images."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text.",
+    "Do not modify files in frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or anything under frontend/src/components/ui (compose/consume them instead).",
+    "Backend must remain a single Motoko actor; add backend logic only if strictly necessary for the landing page."
+  ],
+  "nonGoals": [
+    "Online donation/payment processing (e.g., Stripe)",
+    "User accounts/authentication changes beyond the template defaults",
+    "Real-time chat, messaging, or notifications",
+    "Integration with third-party social media APIs",
+    "Collecting/storing contact form submissions on-chain (unless explicitly requested later)"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Charity logo mark with the text “CHILDSHIELD OUTREACH FOUNDATION”, clean vector-like style, transparent background (childshield-logo.dim_512x512.png)",
+      "Warm, hopeful hero banner illustration suitable for a child protection charity, no text, wide layout (childshield-hero.dim_1600x600.png)"
+    ],
+    "edits": []
+  }
+}

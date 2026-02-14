@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Warm, hopeful color palette for child protection charity */
+        /* Primary: Warm amber/orange - protective, warm, hopeful */
+        --background: 0.99 0 0;
+        --foreground: 0.2 0 0;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.2 0 0;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.2 0 0;
+        
+        /* Primary: Warm amber - represents warmth, protection, hope */
+        --primary: 0.65 0.15 55;
+        --primary-foreground: 0.99 0 0;
+        
+        /* Secondary: Soft neutral */
+        --secondary: 0.95 0.01 80;
+        --secondary-foreground: 0.25 0 0;
+        
+        /* Muted: Light warm gray */
+        --muted: 0.96 0.005 80;
+        --muted-foreground: 0.5 0.01 80;
+        
+        /* Accent: Gentle green - growth, renewal, safety */
+        --accent: 0.75 0.12 145;
+        --accent-foreground: 0.15 0 0;
+        
+        /* Destructive: Soft red for warnings */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.99 0 0;
+        
+        /* Borders and inputs */
+        --border: 0.9 0.01 80;
+        --input: 0.9 0.01 80;
+        --ring: 0.65 0.15 55;
+        
+        /* Chart colors - warm palette */
+        --chart-1: 0.65 0.15 55;
+        --chart-2: 0.75 0.12 145;
+        --chart-3: 0.7 0.18 35;
+        --chart-4: 0.6 0.14 180;
+        --chart-5: 0.68 0.16 90;
+    }
+
+    .dark {
+        /* Dark mode: Maintain warmth while providing contrast */
+        --background: 0.15 0.01 80;
+        --foreground: 0.95 0.01 80;
+        
+        --card: 0.2 0.01 80;
+        --card-foreground: 0.95 0.01 80;
+        
+        --popover: 0.18 0.01 80;
+        --popover-foreground: 0.95 0.01 80;
+        
+        /* Primary: Brighter amber for dark mode */
+        --primary: 0.75 0.18 55;
+        --primary-foreground: 0.15 0 0;
+        
+        --secondary: 0.25 0.01 80;
+        --secondary-foreground: 0.95 0.01 80;
+        
+        --muted: 0.25 0.01 80;
+        --muted-foreground: 0.6 0.01 80;
+        
+        /* Accent: Brighter green for dark mode */
+        --accent: 0.65 0.14 145;
+        --accent-foreground: 0.95 0 0;
+        
+        --destructive: 0.6 0.24 25;
+        --destructive-foreground: 0.15 0 0;
+        
+        --border: 0.3 0.01 80;
+        --input: 0.3 0.01 80;
+        --ring: 0.7 0.16 55;
+        
+        --chart-1: 0.75 0.18 55;
+        --chart-2: 0.65 0.14 145;
+        --chart-3: 0.7 0.2 35;
+        --chart-4: 0.6 0.16 180;
+        --chart-5: 0.68 0.18 90;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}

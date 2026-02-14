@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Create a website link for the charity CHILDSHIELD OUTREACH FOUNDATION.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Charity logo mark with the text “CHILDSHIELD OUTREACH FOUNDATION”, clean vector-like style, transparent background (childshield-logo.dim_512x512.png)\n- Warm, hopeful hero banner illustration suitable for a child protection charity, no text, wide layout (childshield-hero.dim_1600x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-public-single-page-website-landing-page-for-the-charity-named-childshield-outreach-foundation-accessible-at-the-app-s-root-url-with-clear-on-page-sections-and-navigation",
+      "title": "Create a public, single-page website (landing page) for the charity named “CHILDSHIELD OUTREACH FOUNDATION”, accessible at the app’s root URL (/), with clear on-page sections and navigation.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-distinctive-visual-theme-appropriate-for-a-child-focused-charity-consistent-colors-typography-spacing-and-component-styling-across-the-landing-page",
+      "title": "Apply a coherent, distinctive visual theme appropriate for a child-focused charity (consistent colors, typography, spacing, and component styling) across the landing page.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-seo-and-share-metadata-for-the-landing-page-document-title-and-meta-description-reflecting-childshield-outreach-foundation",
+      "title": "Add basic SEO and share metadata for the landing page (document title and meta description) reflecting “CHILDSHIELD OUTREACH FOUNDATION”.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-include-generated-static-image-assets-logo-and-hero-banner-illustration-and-render-them-on-the-landing-page-using-static-hosting-not-served-via-the-backend",
+      "title": "Include generated static image assets (logo and hero/banner illustration) and render them on the landing page using static hosting (not served via the backend).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website link (URL/landing page) for CHILDSHIELD OUTREACH FOUNDATION",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "CHILDSHIELD OUTREACH FOUNDATION",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

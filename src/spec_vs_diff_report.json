@@ -1,0 +1,58 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T22:17:36.572Z",
+  "summary": "Diff adds a single-page landing layout with header navigation and required sections, plus SEO title/meta description and a warm theme configuration. However, the required generated static image assets themselves are not evidenced in the diff (only references to their paths). Also, an unrequested caffeine.ai attribution link was added in the footer.",
+  "missing_requirements": [
+    {
+      "id": "REQ-4",
+      "requirement": "Include generated static image assets (logo and hero/banner illustration) stored under frontend/public/assets/generated and render them on the landing page via static hosting.",
+      "reason": "Components reference the expected image URLs, but the diff summary does not show the actual image files being added under frontend/public/assets/generated (and only 1 added file is omitted due to limits, while 2 images are required).",
+      "evidence": [
+        "frontend/src/components/SiteHeader.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Footer.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Footer includes a 'Built with ... using caffeine.ai' attribution link with UTM tracking.",
+      "reason": "BuildRequest does not request any product attribution, external referral link, or UTM tracking in the footer.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "description": "Backend Motoko actor replaced/added as an empty actor (actor {}).",
+      "reason": "BuildRequest said backend logic should be added only if strictly necessary for the landing page; adding/replacing backend main.mo is not shown as necessary for the landing page requirements.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.68,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/About.tsx",
+    "frontend/src/components/Contact.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GetInvolved.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/LandingSection.tsx",
+    "frontend/src/components/Programs.tsx",
+    "frontend/src/components/SiteHeader.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
