@@ -2,12 +2,12 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-public-single-page-website-landing-page-for-the-charity-named-childshield-outreach-foundation-accessible-at-the-app-s-root-url-with-clear-on-page-sections-and-navigation",
-      "featureTitle": "Create a public, single-page website (landing page) for the charity named “CHILDSHIELD OUTREACH FOUNDATION”, accessible at the app’s root URL (/), with clear on-page sections and navigation.",
+      "featureId": "feature-update-the-get-involved-section-so-the-donate-option-includes-a-bitcoin-btc-donation-address-as-an-additional-donation-method-displayed-on-the-website",
+      "featureTitle": "Update the “Get Involved” section so the “Donate” option includes a Bitcoin (BTC) donation address as an additional donation method, displayed on the website.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/LandingSection.tsx",
-        "frontend/src/components/SiteHeader.tsx"
+        "frontend/src/components/BtcDonationDetails.tsx",
+        "frontend/src/components/GetInvolved.tsx",
+        "frontend/src/config/donations.ts"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,17 +17,17 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-1"
+        "REQ-5"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-apply-a-coherent-distinctive-visual-theme-appropriate-for-a-child-focused-charity-consistent-colors-typography-spacing-and-component-styling-across-the-landing-page",
-      "featureTitle": "Apply a coherent, distinctive visual theme appropriate for a child-focused charity (consistent colors, typography, spacing, and component styling) across the landing page.",
+      "featureId": "feature-add-an-optional-btc-qr-code-presentation-for-the-configured-btc-address-within-the-donation-ui-generated-client-side-and-ensure-the-donation-ui-is-accessible",
+      "featureTitle": "Add an optional BTC QR code presentation for the configured BTC address within the donation UI (generated client-side) and ensure the donation UI is accessible.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
+        "frontend/src/components/BtcDonationDetails.tsx",
+        "frontend/src/components/GetInvolved.tsx",
+        "frontend/src/lib/btcQr.ts"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -37,44 +37,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-basic-seo-and-share-metadata-for-the-landing-page-document-title-and-meta-description-reflecting-childshield-outreach-foundation",
-      "featureTitle": "Add basic SEO and share metadata for the landing page (document title and meta description) reflecting “CHILDSHIELD OUTREACH FOUNDATION”.",
-      "files": [
-        "frontend/index.html"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-include-generated-static-image-assets-logo-and-hero-banner-illustration-and-render-them-on-the-landing-page-using-static-hosting-not-served-via-the-backend",
-      "featureTitle": "Include generated static image assets (logo and hero/banner illustration) and render them on the landing page using static hosting (not served via the backend).",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/SiteHeader.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
+        "REQ-6"
       ],
       "confidence": "high"
     }

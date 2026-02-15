@@ -1,104 +1,57 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "CHILDSHIELD OUTREACH FOUNDATION landing page",
+  "title": "BTC donation option in Get Involved section",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Build a single-page public landing page at / with on-page navigation and required sections in English.",
+      "id": "REQ-5",
+      "summary": "Display a BTC donation address under the landing page “Get Involved” → “Donate” option with copy-to-clipboard and a safe fallback when not configured.",
       "acceptanceCriteria": [
-        "Visiting the deployed app root path (/) displays a landing page titled “CHILDSHIELD OUTREACH FOUNDATION”.",
-        "The page includes a top navigation (or equivalent) that scrolls to sections on the same page.",
-        "At minimum, the page contains these sections: Hero (name + short tagline), About, What We Do/Programs, Get Involved/Support, Contact.",
-        "All user-facing text is in English."
+        "On the landing page, the “Get Involved” section’s “Donate” option reveals BTC donation details (at minimum: a clearly labeled BTC address) in a way that is visible and readable on both mobile and desktop.",
+        "The BTC address is presented as copyable text (e.g., with a “Copy address” control) and provides user feedback after copying (e.g., “Copied”).",
+        "If a BTC address value is not yet configured in code, the UI does not display an invalid address; it shows a clear fallback message indicating the BTC address is not available yet."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/config/donations.ts",
           "operation": "create",
-          "description": "Create the root app view that renders the single-page landing content at /, including a sticky header navigation that scrolls to in-page section anchors (Hero, About, Programs, Get Involved, Contact). Use shadcn-ui components (e.g., Button, Card, Separator) to structure and style sections; verify the component's usage instructions before implementing."
+          "description": "Add a small frontend configuration module for donation-related values (including an optional BTC address), allowing the UI to cleanly detect “not configured yet” and render a fallback message."
         },
         {
-          "path": "frontend/src/components/LandingSection.tsx",
+          "path": "frontend/src/components/BtcDonationDetails.tsx",
           "operation": "create",
-          "description": "Add a small reusable section wrapper component to standardize spacing, max-width, headings, and anchor offsets for smooth in-page navigation; use shadcn-ui styling patterns where appropriate; verify the component's usage instructions before implementing."
+          "description": "Create a reusable BTC donation details component that renders: a clearly labeled BTC address (or fallback message), a copy-to-clipboard control with post-copy feedback state, and responsive layout for mobile/desktop."
         },
         {
-          "path": "frontend/src/components/SiteHeader.tsx",
-          "operation": "create",
-          "description": "Create a header component containing the logo, site name, and navigation links that scroll to the corresponding sections on the same page; use shadcn-ui Button (or similar) for nav actions; verify the component's usage instructions before implementing."
+          "path": "frontend/src/components/GetInvolved.tsx",
+          "operation": "modify",
+          "description": "Update the “Donate” card to reveal BTC donation details on user interaction (e.g., accessible expander/inline panel), wiring in BtcDonationDetails and ensuring the content is readable on mobile and desktop."
         }
       ]
     },
     {
-      "id": "REQ-2",
-      "summary": "Apply a cohesive child-focused charity visual theme (not blue/purple-primary) across typography, spacing, and components.",
+      "id": "REQ-6",
+      "summary": "Provide an optional client-generated QR code for the configured BTC address and ensure the donation UI interactions are accessible by keyboard and screen readers.",
       "acceptanceCriteria": [
-        "A consistent theme is used across headings, body text, buttons/links, section backgrounds, and spacing.",
-        "Theme avoids a default/unstyled look and is applied consistently across all sections.",
-        "Theme does not rely on blue-and-purple as the primary palette."
+        "When a BTC address is configured, the donation UI includes a scannable QR code representation of the BTC address (client-generated; no backend dependency).",
+        "All interactive elements in the donation UI are keyboard accessible and have appropriate accessible names/labels (e.g., for the copy control and any open/close controls if a modal/expander is used).",
+        "No backend canister changes are required to display the BTC donation information."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/lib/btcQr.ts",
           "operation": "create",
-          "description": "Add global styles and Tailwind base layers, including a warm, hopeful color system (e.g., amber/orange + green accents), typography defaults, and consistent section spacing; ensure the primary palette is not blue/purple."
+          "description": "Implement a lightweight client-side QR generation helper for the BTC address (no backend dependency), returning a renderable representation (e.g., SVG path data or canvas draw routine) suitable for use in React."
         },
         {
-          "path": "frontend/tailwind.config.js",
+          "path": "frontend/src/components/BtcDonationDetails.tsx",
           "operation": "modify",
-          "description": "Extend Tailwind theme tokens (as needed) to support the landing page look (e.g., warm accent colors, gradients, and typography/spacing defaults) while keeping a consistent, non-blue/purple primary palette across the app."
+          "description": "Enhance the BTC donation details UI to optionally render a scannable QR code when an address is configured, and ensure all controls (copy, show/hide QR, expand/collapse) have keyboard support and accessible names/labels."
         },
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/GetInvolved.tsx",
           "operation": "modify",
-          "description": "Apply the theme consistently across all landing sections (backgrounds, headings, buttons, cards) and use shadcn-ui components where appropriate for cohesive styling; verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Add basic SEO/share metadata (document title and meta description) for the landing page.",
-      "acceptanceCriteria": [
-        "Browser tab title is set to “CHILDSHIELD OUTREACH FOUNDATION”.",
-        "A meta description is present and describes the charity in general terms without adding unverifiable specifics."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Add a meta description for “CHILDSHIELD OUTREACH FOUNDATION” describing the charity in general, non-specific terms; ensure the existing document title remains “CHILDSHIELD OUTREACH FOUNDATION”."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Include and render generated static logo and hero/banner images from frontend/public/assets/generated without backend serving.",
-      "acceptanceCriteria": [
-        "Generated images are stored under frontend/public/assets/generated.",
-        "The logo appears in the header/hero area, and the hero/banner image appears in the hero section.",
-        "No backend endpoints are introduced solely to serve these images."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/generated/childshield-logo.dim_512x512.png",
-          "operation": "create",
-          "description": "Add the generated static logo asset at the required path for static hosting."
-        },
-        {
-          "path": "frontend/public/assets/generated/childshield-hero.dim_1600x600.png",
-          "operation": "create",
-          "description": "Add the generated static hero/banner asset at the required path for static hosting."
-        },
-        {
-          "path": "frontend/src/components/SiteHeader.tsx",
-          "operation": "modify",
-          "description": "Render the static logo image from frontend/public/assets/generated/childshield-logo.dim_512x512.png in the header/hero area (static hosting; no backend involvement)."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Render the hero/banner image from frontend/public/assets/generated/childshield-hero.dim_1600x600.png prominently in the Hero section, ensuring it loads via static hosting (no backend involvement)."
+          "description": "Ensure the updated Donate interaction pattern (expander/modal/inline panel) supports full keyboard navigation (open/close via keyboard, focus order), and provides accessible labeling for the donation controls."
         }
       ]
     }

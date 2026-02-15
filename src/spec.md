@@ -1,13 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Publish a public single-page landing site for “CHILDSHIELD OUTREACH FOUNDATION” at `/` with clear sections, navigation, a cohesive child-focused visual theme, basic SEO metadata, and embedded static generated images.
+**Goal:** Add Bitcoin (BTC) donation details to the landing page “Get Involved” → “Donate” option.
 
 **Planned changes:**
-- Build a single-page landing page at `/` titled “CHILDSHIELD OUTREACH FOUNDATION”.
-- Add on-page navigation that scrolls to: Hero, About, What We Do/Programs, Get Involved/Support, Contact.
-- Apply a consistent visual theme (colors/typography/spacing/component styling) suitable for a child-focused charity and not primarily blue-and-purple.
-- Add basic SEO metadata: document title and a general, non-specific meta description.
-- Add and render generated static assets (logo + hero/banner) from `frontend/public/assets/generated` (no backend image serving).
+- Update the “Donate” UI in the “Get Involved” section to display a clearly labeled BTC address when configured.
+- Add a “Copy address” control for the BTC address with user feedback after copying (e.g., “Copied”).
+- Add a clear fallback message when no BTC address is configured so no invalid address is shown.
+- Optionally display a client-generated QR code for the configured BTC address within the donation UI.
+- Ensure the donation UI controls (open/close, copy, etc.) are keyboard accessible and have appropriate accessible labels.
 
-**User-visible outcome:** Visitors can open the app root URL to view a themed, sectioned charity landing page with scroll navigation, a logo and hero illustration, and basic SEO/share metadata.
+**User-visible outcome:** Visitors can view and copy a BTC donation address (and optionally scan a QR code) from the landing page donation option on mobile and desktop; if not available, they see a clear “not available yet” message.
